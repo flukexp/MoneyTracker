@@ -84,7 +84,7 @@ def login():
         login_user(user, remember=remember)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('home')
+            next_page = url_for('moneytracker')
         return redirect(next_page)
     return render_template('login.html')
 
@@ -166,7 +166,7 @@ def gen_avatar_url(email, name):
 @login_required
 def logout():
     logout_user()
-    return render_template('logout.html')
+    return render_template('index.html')
 
 @login_manager.user_loader
 def load_user(user_id):
