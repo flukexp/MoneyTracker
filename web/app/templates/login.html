@@ -1,6 +1,7 @@
+
 {% extends "base.html" %}
 {% block content %}
-<div class="column is-4 is-offset-4">
+
  <h3 class="title">Login</h3>
  <div class="box">
    {% with messages = get_flashed_messages() %}
@@ -13,12 +14,16 @@
    <form method="POST">
      <div class="field">
        <div class="control">
-         <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <label>Email</label>
+        <input class="input-box" type="email" name="email" placeholder="Your Email" autofocus="">
        </div>
      </div>
      <div class="field">
        <div class="control">
-         <input class="input is-large" type="password" name="password" placeholder="Your Password">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <label>Password</label>
+        <input class="input-box" type="password" name="password" placeholder="Your Password">
        </div>
      </div>
      <div class="field">
@@ -30,5 +35,5 @@
      <button class="button is-block is-info is-large is-fullwidth">Login</button>
    </form>
  </div>
-</div>
+
 {% endblock %}
