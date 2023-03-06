@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% block content %}
 
- <h3 class="title">Login</h3>
+ 
  <div class="box">
    {% with messages = get_flashed_messages() %}
    {% if messages %}
@@ -12,19 +12,20 @@
    {% endif %}
    {% endwith %}
    <form method="POST">
-     <div class="field">
-       <div class="control">
-        <span class="icon"><ion-icon name="mail"></ion-icon> </span>
+    <h3 class="title">Login</h3>
+     <div class="input-box">
+        <span class="icon">
+          <ion-icon name="mail"></ion-icon>
+        </span>
+        <input  type="email" name="email" autofocus="" required>
         <label>Email</label>
-        <input class="input-box" type="email" name="email" placeholder="Your Email" autofocus="">
-       </div>
      </div>
-     <div class="field">
-       <div class="control">
-        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+     <div class="input-box">
+        <span class="icon">
+          <ion-icon name="lock-closed"></ion-icon>
+        </span>
+        <input  type="password" name="password" required>
         <label>Password</label>
-        <input class="input-box" type="password" name="password" placeholder="Your Password">
-       </div>
      </div>
      <div class="field">
        <label class="checkbox">
@@ -32,9 +33,11 @@
          Remember me
        </label>
      </div>
-     <button class="buttonmit">Login</button><br>
+     <button type="submit" class="buttonmit">Login</button><br>
+     <div class="register">
+      <p>Don't have an account? <a href="#">Register</p>
+     </div>
      <button class="buttonmit">with Facebook</button><br>
-     <button class="buttonmit">with Google</button><br>
    </form>
  </div>
 
